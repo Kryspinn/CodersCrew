@@ -48,13 +48,16 @@ body {
     text-align: center;
     width: 100%;
 }
-.photo{
-    transition: all 0.5s ease-in-out;     
+.photo{      
     width: 40%;
     display: block;
     justify-content: center;
     position: relative;       
     border-radius: 100%;  
+}
+
+.photo:hover{
+    animation: photoAnime 0.3s ease-in-out infinite;
 }
 
 .description{
@@ -78,7 +81,7 @@ a {
 
 
 .icons-solo {
-  transition: all 0.3s ease-in-out;
+  transition: all 1s ease-in-out;
   border-radius: 100%;
   color: rgb(255, 255, 255);
   border: solid 1px rgb(255, 255, 255);
@@ -95,8 +98,7 @@ a {
 }
 
 .icons-solo:hover{
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.175);
+    animation: iconAnime 1s ease-in-out 0 infinite;
 }
 
 @keyframes bg{
@@ -117,5 +119,39 @@ a {
     100%{
         filter:  saturate(0);
         left: -1500px;
+  }
+}
+
+@keyframes photoAnime{
+    0% {    
+        width: 40%;
+    }
+    
+    50% {    
+        width: 45%;
+    }
+    
+    100%{
+        width: 40%;
+  }
+}
+
+@keyframes iconAnime{
+    0% {   
+        background-color: rgba(255, 255, 255, 0.175); 
+        width: 72px;
+        height: 72px;
+    }
+    
+    50% {  
+        background-color: rgba(255, 255, 255, 0.175);  
+        width: 100px;
+        height: 100px;
+    }
+    
+    100%{
+        background-color: rgba(255, 255, 255, 0.175);
+        width: 72px;
+        height: 72px;
   }
 }
